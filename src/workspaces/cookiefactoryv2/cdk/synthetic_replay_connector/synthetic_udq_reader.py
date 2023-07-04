@@ -43,24 +43,6 @@ df = pd.DataFrame(data)
 
 # sample data cleaning operations for the csv data
 
-# re-mapping of entity names to entity_ids for CookieLine1 telemetry data
-simulatorName_to_entityId = {
-    "plasticLiner": "PLASTIC_LINER_a77e76bc-53f3-420d-8b2f-76103c810fac",
-    "boxErector": "BOX_ERECTOR_142496af-df2e-490e-aed5-2580eaf75e40",
-    "labelingBelt": "LABELING_BELT_5f98ffd2-ced1-48dd-a111-e3503b4e8532",
-    "freezingTunnel": "FREEZER_TUNNEL_e12e0733-f5df-4604-8f10-417f49e6d298",
-    "boxSealer": "BOX_SEALER_ad434a34-4363-4a36-8153-20bd7189951d",
-    "cookieFormer": "COOKIE_FORMER_19556bfd-469c-40bc-a389-dbeab255c144",
-    "conveyorRight": "CONVEYOR_RIGHT_TURN_c4f2df3d-26a2-45c5-a6c9-02ca00eb4af6",
-    "verticalConveyor": "VERTICAL_CONVEYOR_d5423f7f-379c-4a97-aae0-3a5c0bcc9116",
-    "conveyorLeft": "CONVEYOR_LEFT_TURN_b28f2ca9-b6a7-44cd-a62d-7f76fc17ba45",
-    "conveyorStraight": "CONVEYOR_STRIGHT_9c62c546-f8ef-489d-9938-d46a12c97f32",
-}
-def remap_ids(row):
-    return simulatorName_to_entityId[row['Name']]
-
-df['entityId'] = df.apply(remap_ids, axis=1)
-
 # re-map alarm status values to match IoT TwinMaker's com.amazon.iottwinmaker.alarm.basic component type
 def remap_alarm_status(row):
     if row['Alarming']:
@@ -69,7 +51,6 @@ def remap_alarm_status(row):
         return 'NORMAL'
 
 df['alarm_status'] = df.apply(remap_alarm_status, axis=1)
-df['AlarmMessage'] = df["Alarm Message"] # Note: no spaces allowed in property names
 
 
 class RenderIoTTwinMakerDataRow(IoTTwinMakerDataRow):
@@ -143,7 +124,7 @@ class RenderValuesReader(SingleEntityReader, MultiEntityReader):
 
                 curr_dt = dt + timedelta(seconds=DATA_INTERVAL)
                 curr_index = (curr_index + 1) % len(data_index)
-
+    
         return data_rows
 
 RENDER_READER = RenderValuesReader()

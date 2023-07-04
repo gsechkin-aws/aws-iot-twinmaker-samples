@@ -561,6 +561,28 @@ export class CookieFactoryV2Stack extends cdk.Stack {
                 "TELEMETRY_DATA_TIME_INTERVAL_SECONDS": '10',
             }
         });
+
+        // synthetic OEE lambda
+        const syntheticOEEUDQ = new lambdapython.PythonFunction(this, 'syntheticOEEUDQ', {
+            entry: path.join(cookiefactoryv2_root, "cdk", "synthetic_replay_connector"),
+            layers: [
+                udqHelperLayer,
+                pandasLayer,
+            ],
+            // functionName starts with "iottwinmaker-" so console-generated workspace role can invoke it
+            functionName: `iottwinmaker-synthOEEUDQ-${this.stackName}`,
+            handler: "lambda_handler",
+            index: 'syntheticOEE_udq_reader.py',
+            memorySize: 256,
+            role: timestreamUdqRole,
+            runtime: lambda.Runtime.PYTHON_3_7,
+            timeout: cdk.Duration.minutes(15),
+            logRetention: logs.RetentionDays.ONE_DAY,
+            environment: {
+                "TELEMETRY_OEE_FILE_NAME": 'OEEmetrics.json',
+                "TELEMETRY_OEE_TIME_INTERVAL_SECONDS": '30',
+            }
+        });
         //endregion
 
         // TMDT application construct
@@ -572,6 +594,7 @@ export class CookieFactoryV2Stack extends cdk.Stack {
                 "__FILL_IN_TS_DB__": `${timestreamDB.databaseName}`,
                 "__TO_FILL_IN_TIMESTREAM_LAMBDA_ARN__": `${timestreamReaderUDQ.functionArn}`,
                 "__TO_FILL_IN_SYNTHETIC_DATA_ARN__": `${syntheticDataUDQ.functionArn}`,
+                "__TO_FILL_IN_SYNTHETIC_OEE_ARN__": `${syntheticOEEUDQ.functionArn}`,
                 '"targetEntityId"': '"TargetEntityId"',
             },
             account: this.account,

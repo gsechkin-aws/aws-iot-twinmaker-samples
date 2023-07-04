@@ -3954,7 +3954,33 @@
         "parentEntityId": "CONVEYOR_LEFT_TURN_f518cc43-90d6-4c77-bf06-a096080234aa"
     },
     {
-        "components": {},
+        "components": {
+            "OEEComponent": {
+                "componentTypeId": "com.example.cookiefactory.oeemetrics",
+                "properties": {
+                    "telemetryAssetId": {
+                        "definition": {
+                            "dataType": {
+                                "type": "STRING"
+                            }
+                        },
+                        "value": {
+                            "stringValue": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"
+                        }
+                    },
+                    "telemetryAssetType": {
+                        "definition": {
+                            "dataType": {
+                                "type": "STRING"
+                            }
+                        },
+                        "value": {
+                            "stringValue": "CookieLine"
+                        }
+                    }
+                }
+            }
+        },
         "description": "",
         "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1",
         "entityName": "COOKIE_LINE",

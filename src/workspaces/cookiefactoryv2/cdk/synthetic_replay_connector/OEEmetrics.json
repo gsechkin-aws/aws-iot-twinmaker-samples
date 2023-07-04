@@ -1,0 +1,8 @@
+{"OEE": 0.998003992015968, "Availability": 1.0, "Performance": 0.998003992015968, "Quality": 1.0, "Time": "00:00:30", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.7485029940119761, "Availability": 1.0, "Performance": 0.7485029940119761, "Quality": 1.0, "Time": "00:01:00", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.665335994677312, "Availability": 0.667332002661344, "Performance": 0.9970089730807576, "Quality": 1.0, "Time": "00:01:30", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.62375249500998, "Availability": 0.7504990019960079, "Performance": 0.8311170212765957, "Quality": 1.0, "Time": "00:02:00", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.5988023952095808, "Availability": 0.8003992015968063, "Performance": 0.7481296758104738, "Quality": 1.0, "Time": "00:02:30", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.49900199600798406, "Availability": 0.667332002661344, "Performance": 0.8723828514456631, "Quality": 0.8571428571428571, "Time": "00:03:00", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.42771599657827203, "Availability": 0.714856002281152, "Performance": 0.6980454726765059, "Quality": 0.8571428571428571, "Time": "00:03:30", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}
+{"OEE": 0.4366267465069861, "Availability": 0.625748502994012, "Performance": 0.7974481658692185, "Quality": 0.875, "Time": "00:04:00", "entityId": "COOKIE_LINE_5ce9f1d5-61b0-433f-a850-53fa7ca27aa1"}

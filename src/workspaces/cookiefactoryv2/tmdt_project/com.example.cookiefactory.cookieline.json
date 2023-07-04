@@ -29,6 +29,32 @@
             "isStoredExternally": true,
             "isTimeSeries": true
         },
+        "AlarmSeverity": {
+            "dataType": {
+                "allowedValues": [
+                    {
+                        "stringValue": "Low"
+                    },
+                    {
+                        "stringValue": "Medium"
+                    },
+                    {
+                        "stringValue": "High"
+                    },
+                    {
+                        "stringValue": "Normal"
+                    }
+                ],
+                "type": "STRING"
+            },
+            "isExternalId": false,
+            "isFinal": false,
+            "isImported": false,
+            "isInherited": false,
+            "isRequiredInEntity": false,
+            "isStoredExternally": true,
+            "isTimeSeries": true
+        },
         "Resources": {
             "dataType": {
                 "nestedType": {

@@ -4,6 +4,7 @@
         "com.example.cookiefactory.alarm.json",
         "com.example.cookiefactory.cookie-former.json",
         "com.example.cookiefactory.cookieline.json",
+        "com.example.cookiefactory.oeemetrics.json",
         "com.example.cookiefactory.equipment.json",
         "com.example.cookiefactory.mixer.json",
         "com.example.cookiefactory.processstep.json",
